@@ -1,1 +1,2 @@
+If the incoming object has to be serialized, and the incoming field is not available in our POJO, it will complain even when you have @JsonIgnore annotation defined on top of the field.
 

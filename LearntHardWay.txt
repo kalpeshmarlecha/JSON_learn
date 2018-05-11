@@ -1,2 +1,15 @@
 If the incoming object has to be serialized, and the incoming field is not available in our POJO, it will complain even when you have @JsonIgnore annotation defined on top of the field.
 
+
+mapper.setSerializationInclusion(Include.NON_EMPTY);
+Includes only NonEmpty values, all the empty values will be ignored and will not be included in our POJO
+
+@JsonProperty-
+This annotation is used to mark a method as a getter or setter for a property. In other words, it associates a json field with a java property. 
+If a name is specified (@JsonProperty(“age”)) then the java property that is annotated with this annotation is mapped to the ‘age’ field of the json, If no name is specified the java property name is used.
+
+@JsonCreator-
+This annotation is used the define constructors that are used to create java objects from json string. It is used during data binding and specifies properties that will be used to create java objects during deserialization.
+
+@JsonAnyGetter and @JsonAnySetter – 
+This annotations are used to mark methods that set or read fields that are not handled by any other java property. These act like catch-all and handle all fields that are not handled by any other java property. The fields are stored in a map as key value pairs.
